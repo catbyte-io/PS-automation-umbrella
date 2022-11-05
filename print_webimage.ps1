@@ -30,14 +30,16 @@ else
     $Location = "C:\Users\Public\Downloads"
     Write-Host "Default download folder will be used"
 }
-
+#prints the location in the console
 Write-Host $Location
 
 $URL = Read-Host "Enter or copy/paste the url"
 
 $WebResponse = Invoke-WebRequest $URL
+$count = 0
 ForEach ($Image in $WebResponse.Images)
 {
-    $FileName = Split-Path $Image.src -Leaf
+    $FileName = "$Location/$count.jpg"
     Invoke-WebRequest $Image.src -OutFile $FileName
+    $count++
 }
