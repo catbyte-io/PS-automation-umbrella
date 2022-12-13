@@ -28,7 +28,7 @@ else
     Write-Host "Default download folder will be used"
 }
 
-$url = Read-Host "Enter url of the first chapter of the Webtoon from https://comic.naver.com/webtoon"
+$url = Read-Host "Enter url of the first chapter
 $num = Read-Host "How many chapters do you want to download? NOTE: if there is already a folder named with the chapter number inside the specified directory, that chapter will be skipped"
 #Split the url string to get the separated parts of the url to use as variables. Split at every = and &.  Save the separated strings into array $sub
 $sub = @()
@@ -38,7 +38,7 @@ Write-Host $sub[3]
 $no = @()
 $no = $sub[3]
 Write-Host $no
-#Save the webtoon title id exracted from the website and save to variable to use as name for folder.
+#Save the title id exracted from the website and save to variable to use as name for folder.
 $titleid = $sub[1]
 $urls = @()
 
